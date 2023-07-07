@@ -1,0 +1,21 @@
+body {
+  height: 136%;
+  background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-686013.png) no-repeat fixed;
+  background-size: cover;
+}
+
+mat-toolbar{
+  font-size: 150%;
+}
+
+#registration-layout {
+  float: left;
+  margin-left:10%;
+  margin-top:5%;
+}
+
+#login-layout {
+  float: right;
+  margin-right:10%;
+  margin-top:5%;
+}

@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+}
+
+mat-card {
+  /*width: 330px;*/
+  width: 100%
+}
+
+
+button {
+  float: right;
+}
+
+#addButtonCard {
+  width: 330px;
+}
+
+.errorDiv {
+  color: #f44336;
+  font-size: 75%;
+}

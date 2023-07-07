@@ -1,0 +1,33 @@
+<div class="loginDiv">
+  <h2> LOGIN IN </h2>
+  <form #loginForm="ngForm" [formGroup]="formLogin" name="loginForm" method="GET" action="/main">
+    <p>ACCOUNT NAME:
+      <mat-form-field>
+        <input matInput type="text" id="login-accountName" name="accountName" placeholder="Ni Liu" formControlName="accountControl" [formControl]="accountFormControl" required>
+        <mat-error *ngIf="accountFormControl.hasError('pattern')">
+          Please enter a valid account name
+        </mat-error>
+        <mat-error *ngIf="accountFormControl.hasError('required')">
+          Account Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>PASSWORD:
+      <mat-form-field>
+        <input matInput type="password" id="login-password" name="password" formControlName="passwordControl" [formControl]="passwordFormControl" required>
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <input mat-button (click)="isRegistered()" class="mat-raised-button mat-accent" type="submit" value="Login" id="loginBtn"
+                        [disabled]="!loginForm.valid">
+
+      <button class="mat-raised-button" id="google-btn" mat-button color="accent" (click)="GoogleLogin()"> <mat-icon>person_outline</mat-icon> Login with Google </button>
+    </p>
+  </form>
+</div>
+

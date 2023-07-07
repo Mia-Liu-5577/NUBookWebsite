@@ -1,0 +1,66 @@
+body {
+  height: 136%;
+  background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-689263.jpg) no-repeat fixed;
+  background-size: cover;
+}
+
+h2 {
+  text-align: center;
+}
+
+.infoDiv {
+  float: left;
+  margin-left:6%;
+  margin-top:5%;
+  width: 18%;
+
+  background-color:rgba(255, 255, 255, 0.8);
+  border-color:#ffffcc;
+  padding:10px 80px 30px 60px;
+}
+
+.updateDiv {
+  float: left;
+  margin-top:5%;
+  margin-left: 5%;
+  width: 18%;
+
+  background-color:rgba(255, 255, 255, 0.8);
+  border-color:#ffffcc;
+  padding:10px 60px 10px 60px;
+}
+
+.linkDiv {
+  float: right;
+  margin-top:5%;
+  margin-right: 5%;
+
+  background-color:rgba(255, 255, 255, 0.9);
+  border-color:#ffffcc;
+  padding:10px 60px 10px 60px;
+}
+
+form {
+  /*margin:20px auto;*/
+  /*padding:10px 60px 10px 60px;*/
+}
+
+.mat-raised-button {
+  margin-right: 10px;
+}
+
+#profilePicInput {
+  display: none;
+}
+
+
+mat-chip {
+  font-size: 110%;
+}
+
+#toMain {
+  margin-left: 80%;
+}
+#link-account, #link-password {
+  width: 100%;
+}

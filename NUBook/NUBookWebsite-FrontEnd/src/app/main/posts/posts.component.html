@@ -1,0 +1,88 @@
+<!-- search posts by author or content -->
+<div class="searchDiv">
+  <mat-form-field id="searchInput">
+    <input matInput #keyWord placeholder="Search posts here. ^_^" id="searchArea">
+  </mat-form-field>
+  <!--Button to call search function in posts.component.ts file-->
+  <button mat-button id="searchBtn" color="primary" (click)="search(keyWord.value)"> <mat-icon>search</mat-icon> SEARCH</button>
+</div>
+
+<!-- post articles -->
+<div class="writeDiv">
+  <h2>Post New Article</h2>
+  <form class="writeForm" [formGroup]="formPost">
+    <!--Field to write posts-->
+    <mat-form-field class="writeField">
+      <textarea matInput id="postTextArea" placeholder="Write your post here. ^_^" formControlName="postControl" [(ngModel)]="postArea"></textarea>
+    </mat-form-field>
+
+    <input mat-button class="mat-raised-button mat-accent" value="Post" type="submit" (click)="addPosts()" id="postBtn">
+    <input mat-button class="mat-raised-button mat-accent" value="Cancel" type="reset">
+
+    <!--Button to upload image, use a mat-button to call click function in a file input button that will not be sen,-->
+    <a mat-button class="mat-raised-button mat-accent" onclick="document.getElementById('selectImg').click()"> Upload Img </a>
+    <input id="selectImg" name="file" type="file" accept="image/*" (change)="postImg($event)">
+  </form>
+</div>
+
+<!--Line to separate up and down part-->
+<br>
+<mat-toolbar></mat-toolbar>
+
+<!-- show user's posts -->
+<div id="previousArticle">
+  <h2> Posts </h2>
+  <!--Use mat-card to contain posts-->
+  <mat-card *ngFor="let article of postsList" class="posts-card" id="postsList"> <!--articleList contains info from articles.json, assigned in posts.component.ts-->
+
+    <!--Author's info: avatar, userId, name and post-date-->
+    <mat-card-header>
+      <img mat-card-avatar src="{{article.avatar}}" class="author-avatar">
+      <mat-card-title>{{article.author}}</mat-card-title>
+      <mat-card-subtitle>id: {{article._id}}</mat-card-subtitle>
+      <mat-card-subtitle>date: {{article.date}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!--Content text and image of posts-->
+    <mat-card-content attr.contenteditable={{article.editable}} #articleText id="articleText">
+      {{article.text}}
+    </mat-card-content>
+    <img md-card-iamge src="{{article.img}}">
+
+    <br><br>
+
+    <!--Edit article and submit changes-->
+    <mat-card-actions>
+      <button id="edit-post-btn" mat-button class="mat-raised-button mat-accent" [disabled]="article.author != accountName" (click)="can_edit(article)"> <mat-icon>edit</mat-icon> EDIT POST </button>
+      <button id="submit-post-btn" mat-button class="mat-raised-button mat-accent" [disabled]="article.author != accountName" (click)="submit_edit_post(article, articleText.innerHTML)"> <mat-icon>done</mat-icon> SUBMIT CHANGE </button>
+    </mat-card-actions>
+
+    <!--Write comment here and submit-->
+    <mat-form-field id="comment-area">
+      <input matInput placeholder="Comment here" #commentArea>
+    </mat-form-field>
+    <button mat-button class="mat-raised-button mat-accent" (click)="post_comment(article, commentArea.value)"> <mat-icon>comment</mat-icon> POST COMMENT </button>
+
+
+    <mat-list *ngFor="let comment of article['comments']">
+      <mat-list-item>
+        <mat-icon matListIcon>comment</mat-icon>
+        {{comment['author']}}: &nbsp;&nbsp;
+        <span attr.contenteditable={{comment.editable}} #commentText> {{comment['text']}} </span>
+        <button id="edit-comment-btn" mat-button [disabled]="comment.author != accountName" (click)="can_edit_comment(comment)"> <mat-icon>edit</mat-icon> EDIT </button>
+        <button id="submit-changed-btn" mat-button [disabled]="comment.author != accountName" (click)="submit_edit_comment(comment['commentId'], article, comment, commentText.innerHTML)"> <mat-icon>done</mat-icon> SUBMIT </button>
+
+      </mat-list-item>
+    </mat-list>
+
+
+    <!--Comments from users-->
+    <!--<mat-chip-list *ngFor="let comment of article['comments']">-->
+      <!--<mat-chip color="accent" selected="true">-->
+        <!--{{comment}}-->
+      <!--</mat-chip>-->
+    <!--</mat-chip-list>-->
+
+  </mat-card>
+</div>
+

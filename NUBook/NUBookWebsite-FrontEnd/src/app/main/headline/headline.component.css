@@ -1,0 +1,17 @@
+h2 {
+  text-align: center;
+}
+
+/*.user-avatar {*/
+  /*background-image: url('https://scontent-sea1-1.cdninstagram.com/vp/65a953a1d3330a19b8864afddae6a285/5C2D0AE8/t51.2885-15/e35/11356926_954110691316269_659282159_n.jpg?ig_cache_key=MTAzNDU1Mzg4MzU5MzQ2NzgxOQ%3D%3D.2');*/
+  /*background-size: cover;*/
+/*}*/
+
+/*.user-card {*/
+  /*float: left;*/
+/*}*/
+
+mat-card {
+  /*width: 330px;*/
+  width: 100%;
+}

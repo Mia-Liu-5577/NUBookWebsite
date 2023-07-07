@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Ni Liu">
+  </head>
+
+  <body>
+    <mat-toolbar color="primary">
+      <h1> Profile </h1>
+      <a mat-button (click)="toMain()" class="mat-raised-button mat-accent" id="toMain"> Return to Main </a>
+    </mat-toolbar>
+
+    <div class="infoDiv">
+      <h2>
+        CURRENT INFORMATION
+      </h2>
+
+      <img src={{avatar}} height="100px" width="100px"><br>
+      <a mat-button class="mat-raised-button mat-warn" onclick="document.getElementById('profilePicInput').click()"> Update New Photo </a>
+      <input id="profilePicInput" name="file" type="file" accept="image/*" (change)="postImg($event)">
+      <!--<input id="selectImg" name="file" type="file" accept="image/*" (change)="postImg($event)">-->
+
+      <br><br>
+
+      <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+        Account name:
+        <mat-chip selected="true" color="accent"> {{accountName}} </mat-chip><br>
+
+        Display name:
+        <mat-chip selected="true" color="accent"> {{displayName}} </mat-chip><br>
+
+        E-mail Address:
+        <mat-chip selected="true" color="accent"> {{emailAddress}} </mat-chip><br>
+
+        Date of Birth:
+        <mat-chip selected="true" color="accent"> {{birthday}} </mat-chip><br>
+
+        Phone Number:
+        <mat-chip selected="true" color="accent"> {{phoneNumber}} </mat-chip><br>
+
+        Zipcode:
+        <mat-chip selected="true" color="accent"> {{zipCode}} </mat-chip><br>
+
+        Password:
+        <mat-chip selected="true" color="accent"> {{password}} </mat-chip><br>
+      </mat-chip-list>
+    </div>
+
+    <div class="updateDiv">
+      <h2> UPDATE INFORMATION </h2>
+      <form #updateForm="ngForm" [formGroup]="formUpdate" name="registerForm" method="GET" action="/main">
+        <p>ACCOUNT NAME:
+          <mat-form-field>
+            <input matInput type="text" name="accountName" placeholder="Ni Liu" formControlName="accountControl" [formControl]="accountFormControl" [(ngModel)]="account_clear">
+            <mat-error *ngIf="accountFormControl.hasError('pattern')">
+              Please enter a valid account name
+            </mat-error>
+            <mat-error *ngIf="accountFormControl.hasError('required')">
+              Account Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>DISPLAY NAME:
+          <mat-form-field>
+            <input matInput type="text" name="displayName" placeholder="Ni-Liu-1" formControlName="displayControl" [formControl]="displayFormControl" [(ngModel)]="display_clear">
+          </mat-form-field>
+        </p>
+
+        <p>EMAIL ADDRESS:
+          <mat-form-field>
+            <input matInput type="text" name="emailAddress" placeholder="xxx@xxx.com" formControlName="emailControl" [formControl]="emailFormControl" [(ngModel)]="email_clear">
+            <mat-error *ngIf="emailFormControl.hasError('pattern')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>DATE OF BIRTH:
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" name="birthday" placeholder="Choose your birth date" formControlName="birthdayControl" [formControl]="birthdayFormControl" [(ngModel)]="birthday_clear">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="birthdayFormControl.hasError('required')">
+              Date of birth is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>PHONE NUMBER:
+          <mat-form-field>
+            <input matInput type="text" name="phoneNumber" placeholder="123-123-1234"  formControlName="phonenumControl" [formControl]="phonenumFormControl" [(ngModel)]="phone_clear">
+            <mat-error *ngIf="phonenumFormControl.hasError('pattern')">
+              Please enter a valid phone number
+            </mat-error>
+            <mat-error *ngIf="phonenumFormControl.hasError('required')">
+              Phone Number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>ZIP CODE:
+          <mat-form-field>
+            <input matInput type="text" name="zipCode" placeholder="77030" formControlName="zipcodeControl" [formControl]="zipcodeFormControl" [(ngModel)]="zipcode_clear">
+            <mat-error *ngIf="zipcodeFormControl.hasError('pattern')">
+              Please enter a valid zipcode
+            </mat-error>
+            <mat-error *ngIf="zipcodeFormControl.hasError('required')">
+              Zipcode is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>PASSWORD:
+          <mat-form-field>
+            <input matInput type="password" name="password" formControlName="passwordControl" [formControl]="passwordFormControl" [(ngModel)]="password_clear">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <input mat-button (click)="submitForm()"  class="mat-raised-button mat-accent" type="submit" value="Submit"
+                 [disabled]="!updateForm.valid">
+          <input mat-button class="mat-raised-button mat-accent" type="reset" value="Clear">
+        </p>
+      </form>
+    </div>
+
+    <div class="linkDiv">
+      <h2>Link Account</h2>
+      <mat-form-field id="link-account">
+        <input #linkAccount matInput placeholder="Input the account name you want to link">
+      </mat-form-field>
+      <br>
+      <mat-form-field id="link-password">
+        <input type="password" #linkPassword matInput placeholder="Input the correct password">
+      </mat-form-field>
+      <br>
+      <button class="mat-raised-button mat-primary" mat-button color="primary" (click)="link(linkAccount.value, linkPassword.value)"><mat-icon>person_outline</mat-icon>Link Account</button>
+      <button class="mat-raised-button mat-warn" mat-button color="warn" (click)="unlink()"><mat-icon>person_outline</mat-icon>Unlink Account</button>
+    </div>
+
+
+  </body>
+</html>

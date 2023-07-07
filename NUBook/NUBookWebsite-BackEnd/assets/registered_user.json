@@ -1,0 +1,137 @@
+{"registered_user":
+    [
+        {
+            "accountName": "hd25",
+            "displayName": "hd25",
+            "emailAddress": "hd25@northeastern.edu",
+            "birthday": "1996-4-11",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-hd25",
+            "avatar": "http://pbs.twimg.com/profile_images/986234964269121536/wh3Se8N0_400x400.jpg",
+            "headline": "Too young too simple, sometime naive. hahaha",
+            "following": ["qw36", "kb96", "aw23", "ds74", "ti76", "lk63", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "qw36",
+            "displayName": "qw36",
+            "emailAddress": "qw36@northeastern.edu",
+            "birthday": "1997-3-23",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-qw36",
+            "avatar": "https://pbs.twimg.com/media/DZb4GiWVAAARBwJ.jpg",
+            "headline": "Time and tide wait for no man, except Elder Jiang",
+            "following": ["hd25", "kb96", "aw23", "ds74", "ti76", "lk63", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "kb96",
+            "displayName": "kb96",
+            "emailAddress": "kb96@northeastern.edu",
+            "birthday": "1999-11-1",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-kb96",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-692487.jpg",
+            "headline": "I’m ready for any challenge, except Jiang's -1s.",
+            "following": ["hd25", "qw36", "aw23", "ds74", "ti76", "lk63", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "aw23",
+            "displayName": "aw23",
+            "emailAddress": "aw23@northeastern.edu",
+            "birthday": "1995-8-20",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-aw23",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-698419.jpg",
+            "headline": "Asd af, rger eg we w ewe gwe rw werw er wer we wer",
+            "following": ["hd25", "qw36", "kb96", "ds74", "ti76", "lk63", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "ds74",
+            "displayName": "ds74",
+            "emailAddress": "ds74@northeastern.edu",
+            "birthday": "1997-6-29",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-ds74",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-693051.jpg",
+            "headline": "Vivamus laoreet. Nullam tincidunt adipiscing enim.",
+            "following": ["hd25", "qw36", "kb96", "aw23", "ti76", "lk63", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "ti76",
+            "displayName": "ti76",
+            "emailAddress": "ti76@northeastern.edu",
+            "birthday": "1998-2-12",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-ti76",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-692488.jpg",
+            "headline": "Cras sagittis. Praesent ac sem eget est egestas v. ",
+            "following": ["hd25", "qw36", "kb96", "aw23", "ds74", "lk63", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "lk63",
+            "displayName": "lk63",
+            "emailAddress": "lk63@northeastern.edu",
+            "birthday": "1998-2-12",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-lk63",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-692998.jpg",
+            "headline": "Pellentesque dapibus hendrerit tortor. Praesent ege.",
+            "following": ["hd25", "qw36", "kb96", "aw23", "ds74", "ti76", "ng66", "hj36", "ls24"]
+        },
+        {
+            "accountName": "ng66",
+            "displayName": "ng66",
+            "emailAddress": "ng66@northeastern.edu",
+            "birthday": "1994-1-24",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-ng66",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-693881.jpg",
+            "headline": " Duis vel nibh at velit scelerisque suscipit. Curabi.",
+            "following": ["hd25", "qw36", "kb96", "aw23", "ds74", "ti76", "lk63", "hj36", "ls24"]
+        },
+        {
+            "accountName": "hj36",
+            "displayName": "hj36",
+            "emailAddress": "hj36@northeastern.edu",
+            "birthday": "1990-10-13",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-hj36",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-586302.jpg",
+            "headline": " Suspendisse in mauris suscipit, bibendum quam sasd.",
+            "following": ["hd25", "qw36", "kb96", "aw23", "ds74", "ti76", "lk63", "ng66", "ls24"]
+        },
+        {
+            "accountName": "ls24",
+            "displayName": "ls24",
+            "emailAddress": "ls24@northeastern.edu",
+            "birthday": "1989-12-12",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-ls24",
+            "avatar": "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-674454.jpg",
+            "headline": "  Maecenas porttitor urna eget quam pelle sada werwe",
+            "following": ["hd25", "qw36", "kb96", "aw23", "ds74", "ti76", "lk63", "ng66", "hj36"]
+        },
+        {
+            "accountName": "HIRI",
+            "displayName": "hiri",
+            "emailAddress": "hiri@northeastern.edu",
+            "birthday": "2018-11-26",
+            "phoneNumber": "123-123-1234",
+            "zipCode": "77030",
+            "password": "password-hiri",
+            "avatar": "https://upload.wikimedia.org/wikipedia/en/8/8e/AppleSiriIcon2017.png",
+            "headline": "default user",
+            "following": ["hd25"]
+        }
+    ]
+}
+

@@ -1,0 +1,22 @@
+<div>
+  <mat-card class="user-card">
+    <h2> User Info </h2>
+    <!--Use mat-card to contain info of user-->
+    <mat-card-header>
+      <!--<div mat-card-avatar class="user-avatar"></div>-->
+      <img mat-card-avatar src={{avatar}}>
+      <mat-card-title> {{accountName}} </mat-card-title>
+      <mat-card-subtitle>
+        <span id="headlineContent">{{ headlineContent }}</span> <br> <!--Assigned in headline.component.ts file-->
+
+        <!--Field and button to update user's headline-->
+        <mat-form-field floatPlaceholder="never">
+          <input matInput #headline placeholder="Update Headline" [(ngModel)]="headline_clear" id="headlineInput">
+        </mat-form-field>
+        <button mat-button id="headlineBtn" color="primary" (click)="updateHeadline(headline.value)"> <mat-icon>update</mat-icon> </button>
+
+      </mat-card-subtitle>
+
+    </mat-card-header>
+  </mat-card>
+</div>

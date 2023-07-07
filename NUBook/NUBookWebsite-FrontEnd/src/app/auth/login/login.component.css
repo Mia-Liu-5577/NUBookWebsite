@@ -1,0 +1,14 @@
+h2 {
+  text-align: center;
+}
+
+.loginDiv {
+  margin:20px auto;
+  padding:10px 60px 10px 60px;
+  background-color:rgba(255, 255, 255, 0.6);
+  border-color:#ffffcc;
+}
+
+#google-btn {
+  margin-left: 20px;
+}

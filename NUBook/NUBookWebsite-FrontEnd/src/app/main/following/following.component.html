@@ -1,0 +1,48 @@
+<!--User's follower HTML-->
+<div>
+  <mat-card>
+    <h2>Followers</h2>
+    <!--Use mat-card to contain info of followers-->
+    <mat-card-header *ngFor="let follower of followersList"> <!--followerList contains info from follower.json, assigned in following.component.ts file-->
+      <!--Follower's avatar, name and headline-->
+      <img mat-card-avatar src="{{follower.avatar}}">
+      <mat-card-title>{{follower.accountName}}</mat-card-title>
+      <mat-card-subtitle>{{follower.headline}}</mat-card-subtitle>
+
+      <!--Button to unfollow(remove)-->
+      <button id="remove-btn" mat-mini-fab (click)="removeFollower(follower.accountName)">
+        <mat-icon>remove</mat-icon>
+      </button>
+
+    </mat-card-header>
+
+    <!--Button to add follower-->
+    <mat-card-header id="addButtonCard">
+      <form #addfollowerForm="ngForm" [formGroup]="formAddfollower" method="GET">
+
+        <!--<mat-card-subtitle>________________________________________________</mat-card-subtitle>-->
+        <mat-form-field>
+          <input matInput type="text" name="followerName" placeholder="Name of new follower" formControlName="followernameControl" [formControl]="followernameFormControl" [(ngModel)]="addfollower_clear">
+          <div class="errorDiv" *ngIf="!checkFollower()">
+            User must be registered and not exist in follower list.
+          </div>
+        </mat-form-field>
+
+        <button mat-mini-fab color="warn" (click)="addFollower()">
+          <mat-icon>add</mat-icon> <!--Angular Material button icon-->
+        </button>
+
+      </form>
+
+    </mat-card-header>
+
+
+  </mat-card>
+
+</div>
+
+
+
+
+
+

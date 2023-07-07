@@ -1,0 +1,102 @@
+<div class="registerDiv">
+  <h2> REGISTRATION </h2>
+
+  <form #registerForm="ngForm" [formGroup]="formRegister" name="registerForm" method="GET" action="/main">
+    <p>ACCOUNT NAME:
+      <mat-form-field>
+        <input matInput type="text" id="accountName" name="accountName" placeholder="Ni Liu" formControlName="accountControl" [formControl]="accountFormControl" required>
+        <mat-error *ngIf="accountFormControl.hasError('pattern')">
+          Please enter a valid account name
+        </mat-error>
+        <mat-error *ngIf="accountFormControl.hasError('required')">
+          Account Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>DISPLAY NAME:
+      <mat-form-field>
+        <input matInput type="text" id="displayName" name="displayName" placeholder="Liu-Ni-1" formControlName="displayControl" [formControl]="displayFormControl">
+      </mat-form-field>
+    </p>
+
+    <p>EMAIL ADDRESS:
+      <mat-form-field>
+        <input matInput type="text" id="emailAddress" name="emailAddress" placeholder="xxx@xxx.com" formControlName="emailControl" [formControl]="emailFormControl" required>
+        <mat-error *ngIf="emailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>DATE OF BIRTH:
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" id="birthday" name="birthday" placeholder="Choose your birth date" formControlName="birthdayControl" [formControl]="birthdayFormControl" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="birthdayFormControl.hasError('required')">
+          Date of birth is <strong>required</strong>
+        </mat-error>
+        <div class="errorDiv" *ngIf="!isAdult()">
+          You should be more than 18
+        </div>
+      </mat-form-field>
+    </p>
+
+    <p>PHONE NUMBER:
+      <mat-form-field>
+        <input matInput type="text" id="phoneNumber" name="phoneNumber" placeholder="123-123-1234"  formControlName="phonenumControl" [formControl]="phonenumFormControl" required>
+        <mat-error *ngIf="phonenumFormControl.hasError('pattern')">
+          Please enter a valid phone number
+        </mat-error>
+        <mat-error *ngIf="phonenumFormControl.hasError('required')">
+          Phone Number is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>ZIP CODE:
+      <mat-form-field>
+        <input matInput type="text" id="zipCode" name="zipCode" placeholder="77030" formControlName="zipcodeControl" [formControl]="zipcodeFormControl" required>
+        <mat-error *ngIf="zipcodeFormControl.hasError('pattern')">
+          Please enter a valid zipcode
+        </mat-error>
+        <mat-error *ngIf="zipcodeFormControl.hasError('required')">
+          Zipcode is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>PASSWORD:
+      <mat-form-field>
+        <input matInput type="password" id="password" name="password" formControlName="passwordControl" [formControl]="passwordFormControl" required>
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>PASSWORD CONFIRMATION:
+      <mat-form-field>
+        <input matInput type="password" id="passwordConfirm" name="passwordConfirm" formControlName="passwordconfirmControl" [formControl]="passwordconfirmFormControl" required>
+        <mat-error *ngIf="passwordconfirmFormControl.hasError('required')">
+          Password Confirmation is <strong>required</strong>
+        </mat-error>
+        <div class="errorDiv" *ngIf="!passwordMatch()">
+          Password confirmation should be equal to password above
+        </div>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <input mat-button (click)="submitForm()" class="mat-raised-button mat-accent" type="submit" value="Submit" id="registerBtn"
+                        [disabled]="!registerForm.valid || !isAdult() || !passwordMatch()">
+      <input mat-button class="mat-raised-button mat-accent" type="reset" value="Clear">
+    </p>
+  </form>
+
+
+</div>
