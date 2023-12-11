@@ -5,4 +5,4 @@
 - Supported third party authenticated login/logout and CURD operations for user information.
 - Verified code with Karma and Jasmine for unit test and e2e test.   
    
-[Click here to start visiting my website!](https://nubook-liun1.surge.sh)
+
